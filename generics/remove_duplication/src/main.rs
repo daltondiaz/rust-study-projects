@@ -1,15 +1,4 @@
-fn largest(list: &[i32]) -> &i32 {
-    let mut largest = &list[0];
-
-    for item in list {
-        if item > largest {
-            largest = item;
-        }
-    }
-    largest
-}
-
-fn largest_char(list: &[char]) -> &char {
+fn largest<T: PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
 
     for item in list {
@@ -29,6 +18,6 @@ fn main() {
 
     let char_list = vec!['a', 'w', 'x', 'b', 'z']; 
 
-    let result =  largest_char(&char_list);
+    let result =  largest(&char_list);
     println!("The largest char is {}", result);
 }
